@@ -1,8 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, Menu, X } from "lucide-react";
+import { Shield, Menu, X, LogIn } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { AuthDialog } from "@/components/auth/AuthDialog";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -48,8 +49,14 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
+            <AuthDialog>
+              <Button variant="outline" size="sm">
+                <LogIn className="w-4 h-4" />
+                Login
+              </Button>
+            </AuthDialog>
             <Link to="/verify">
               <Button variant="accent" size="sm">
                 Get Started
@@ -85,6 +92,12 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <AuthDialog>
+                <Button variant="outline" className="w-full mt-2">
+                  <LogIn className="w-4 h-4" />
+                  Login / Sign Up
+                </Button>
+              </AuthDialog>
               <Link to="/verify" onClick={() => setIsOpen(false)}>
                 <Button variant="accent" className="w-full mt-2">
                   Get Started

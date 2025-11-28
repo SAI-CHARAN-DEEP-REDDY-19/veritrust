@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
@@ -44,60 +44,30 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Resources */}
-          <div>
-            <h4 className="font-semibold mb-4">Resources</h4>
-            <ul className="space-y-3">
-              {[
-                { href: "/about", label: "Documentation" },
-                { href: "/about", label: "API Reference" },
-                { href: "/about", label: "Integration Guide" },
-                { href: "/about", label: "FAQs" },
-              ].map((link, index) => (
-                <li key={index}>
-                  <Link
-                    to={link.href}
-                    className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Contact */}
           <div>
             <h4 className="font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-sm text-primary-foreground/70">
-                <Mail className="w-4 h-4" />
-                support@veritrust.edu
+                <Mail className="w-4 h-4 shrink-0" />
+                chirralakshmisruthi@gmail.com
               </li>
               <li className="flex items-center gap-3 text-sm text-primary-foreground/70">
-                <Phone className="w-4 h-4" />
-                +1 (555) 123-4567
+                <Phone className="w-4 h-4 shrink-0" />
+                +91 9440967217
               </li>
               <li className="flex items-start gap-3 text-sm text-primary-foreground/70">
-                <MapPin className="w-4 h-4 mt-0.5" />
-                123 Innovation Drive,<br />Tech City, TC 10001
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
+                <span>Dundigal V, Survey No. 444, Dundigal, Gandi maisama, Medchal Malkajgiri, Telangana – 500 043</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center">
           <p className="text-sm text-primary-foreground/60">
             © {new Date().getFullYear()} VeriTrust. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <Link to="/about" className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="/about" className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
