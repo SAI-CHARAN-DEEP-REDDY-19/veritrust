@@ -12,7 +12,6 @@ import {
   CheckCircle2,
   ArrowRight,
   Building2,
-  Award,
   FileCheck
 } from "lucide-react";
 
@@ -37,21 +36,6 @@ const values = [
     title: "User Privacy",
     description: "Your data is yours. Share only what you want, when you want, with whom you want.",
   },
-];
-
-const team = [
-  { name: "Dr. Sarah Chen", role: "CEO & Co-founder", avatar: "👩‍💼" },
-  { name: "Michael Roberts", role: "CTO & Co-founder", avatar: "👨‍💻" },
-  { name: "Priya Sharma", role: "Head of Product", avatar: "👩‍🔬" },
-  { name: "James Wilson", role: "Head of Security", avatar: "👨‍🔧" },
-];
-
-const milestones = [
-  { year: "2020", title: "Founded", description: "VeriTrust was born with a mission to eliminate credential fraud." },
-  { year: "2021", title: "First 100 Institutions", description: "Universities and companies started issuing verified credentials." },
-  { year: "2022", title: "1 Million Verified", description: "Reached our first million verified credentials." },
-  { year: "2023", title: "Global Expansion", description: "Expanded to 50+ countries across 6 continents." },
-  { year: "2024", title: "50 Million+", description: "Over 50 million credentials verified and counting." },
 ];
 
 const About = () => {
@@ -156,64 +140,21 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline Section */}
+      {/* Our Journey Section - Simplified */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8">
               Our Journey
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              From a simple idea to a global platform.
-            </p>
-          </div>
-          
-          <div className="max-w-3xl mx-auto">
-            <div className="relative">
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border" />
-              <div className="space-y-8">
-                {milestones.map((milestone, index) => (
-                  <div key={index} className="relative flex gap-6">
-                    <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm shrink-0 z-10">
-                      {milestone.year}
-                    </div>
-                    <div className="bg-card rounded-xl p-6 border border-border flex-1">
-                      <h3 className="font-semibold text-foreground mb-1">{milestone.title}</h3>
-                      <p className="text-sm text-muted-foreground">{milestone.description}</p>
-                    </div>
-                  </div>
-                ))}
+            <div className="bg-card rounded-2xl p-8 border border-border shadow-lg">
+              <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-xl mx-auto mb-6">
+                2025
               </div>
+              <p className="text-lg text-muted-foreground">
+                VeriTrust was born with a mission to eliminate credential fraud.
+              </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Leadership Team
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Meet the people building the future of credential verification.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {team.map((member, index) => (
-              <div 
-                key={index}
-                className="bg-card rounded-2xl p-6 border border-border text-center hover:shadow-lg transition-shadow"
-              >
-                <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4 text-4xl">
-                  {member.avatar}
-                </div>
-                <h3 className="font-semibold text-foreground mb-1">{member.name}</h3>
-                <p className="text-sm text-muted-foreground">{member.role}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
